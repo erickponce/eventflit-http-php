@@ -683,7 +683,7 @@ class Eventflit implements LoggerAwareInterface
 
         $query_params['body_md5'] = md5($post_value);
 
-        $notification_path = '/server_api/v1'.$this->settings['base_path'].'/notifications';
+        $notification_path = 'publisher/app/'.$this->settings['app_id'].'/publishes';
         $ch = $this->create_curl($this->notification_domain(), $notification_path, 'POST', $query_params);
 
         $this->log('trigger POST (Native notifications): {post_value}', compact('post_value'));
